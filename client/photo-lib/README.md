@@ -1,4 +1,4 @@
-# photo-app
+# photo-lib
 
 ## Project setup
 ```
