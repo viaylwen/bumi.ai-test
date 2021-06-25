@@ -2,44 +2,42 @@
   <section>
     <div id="nav" class="d-flex justify-content-center">
       <div class="col-1">
-        <router-link to="/">
-          <button class="clickable-btn circle-icon"><i class="fas fa-home"></i></button>
-        </router-link>
+        <router-link to="/">Home</router-link>
       </div>
       <div class="col-1">
-        <router-link to="/favorites">
-          <button class="clickable-btn circle-icon"><i class="fas fa-heart"></i></button>
-        </router-link>
+        <router-link to="/favorites">Favorites</router-link>
       </div>
     </div>
   <!-- Website Name -->
-    <h2>Photo Library</h2>
+    <h2 class="text-center">Photo Library</h2>
   </section>
 </template>
 
 <script>
+import router from '../router'
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  name: 'Navbar',
+  methods: {
+    redirHome () {
+      router.push('/')
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+#nav {
+  padding: 30px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+#nav a {
+  font-weight: bold;
+  color: #303841;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+#nav a.router-link-exact-active {
+  color: #303841;
 }
 </style>
