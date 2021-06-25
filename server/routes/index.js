@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/photos', PhotoController.findAll)
 router.get('/photos/:id', PhotoController.findOne)
 router.get('/favorites', FavoriteController.findAll)
-router.post('/favorites/:photoId', FavoriteController.addToFavorite)
+router.post('/favorites', FavoriteController.addToFavorite)
 router.delete('/favorites/:id', FavoriteController.delete)
 
 module.exports = router
