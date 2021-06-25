@@ -24,7 +24,10 @@ class FavoriteController {
 
     static async addToFavorite (req, res, next) {
         try {
-            let favoriteData = await Favorite.create({ PhotoId: req.params.photoId })
+            const photo = {
+                PhotoId: +req.body.PhotoId
+            }
+            let favoriteData = await Favorite.create(photo)
             res.status(201).json(favoriteData)
         } catch (err) {
             next(err)
